@@ -1,0 +1,6 @@
+Event	ID	Name			Wwise Object Path	Notes
+	2739838641	Drone			\Default Work Unit\Drone	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	763091928	Test beep	K:\PROFESSIONAL\Games\Game Jams\Lunar Harvest ALL\Lunar Harvest Wwise\Godot Test\.cache\Windows\SFX\sfx_test_beep_3sec_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Test beep		802948
+
