@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://billu2uub7dyo"
-path="res://.godot/imported/State_nor.svg-367952294445cb37b2ffc0af50a35618.ctex"
+path="res://.godot/imported/State_nor.svg-577db5c5c9a87185285c28eeff29fd99.ctex"
 metadata={
 "has_editor_variant": true,
 "vram_texture": false
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://addons/Wwise/editor/images/State_nor.svg"
-dest_files=["res://.godot/imported/State_nor.svg-367952294445cb37b2ffc0af50a35618.ctex"]
+source_file="res://Addons/Wwise/editor/images/State_nor.svg"
+dest_files=["res://.godot/imported/State_nor.svg-577db5c5c9a87185285c28eeff29fd99.ctex"]
 
 [params]
 

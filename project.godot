@@ -11,13 +11,13 @@ config_version=5
 [application]
 
 config/name="Minigame-a-month-feb-2024"
-run/main_scene="res://node_2d.tscn"
+run/main_scene="res://Scene/node_2d.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
-config/icon="res://icon.svg"
+config/icon="res://Asset/icon.svg"
 
 [autoload]
 
-WwiseRuntimeManager="*res://addons/Wwise/runtime/wwise_runtime_manager.gd"
+WwiseRuntimeManager="*res://Addons/Wwise/runtime/wwise_runtime_manager.gd"
 
 [rendering]
 

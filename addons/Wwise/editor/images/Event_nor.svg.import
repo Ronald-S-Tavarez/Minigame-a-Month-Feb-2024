@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c6320wx4uohhj"
-path="res://.godot/imported/Event_nor.svg-cca1b541d543badefe73ca9210414ad3.ctex"
+path="res://.godot/imported/Event_nor.svg-04912eb55fb1e629dadb52636687cf1b.ctex"
 metadata={
 "has_editor_variant": true,
 "vram_texture": false
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://addons/Wwise/editor/images/Event_nor.svg"
-dest_files=["res://.godot/imported/Event_nor.svg-cca1b541d543badefe73ca9210414ad3.ctex"]
+source_file="res://Addons/Wwise/editor/images/Event_nor.svg"
+dest_files=["res://.godot/imported/Event_nor.svg-04912eb55fb1e629dadb52636687cf1b.ctex"]
 
 [params]
 
