@@ -1,0 +1,47 @@
+[gd_scene load_steps=9 format=3 uid="uid://cwwbux7uty2po"]
+
+[ext_resource type="Script" path="res://Script/Player.gd" id="1_b0x8q"]
+[ext_resource type="Texture2D" uid="uid://n8ksqvvysl5w" path="res://Asset/Sprite/Player/body.png" id="1_diq72"]
+[ext_resource type="Texture2D" uid="uid://cf8hd481t2sg0" path="res://Asset/Sprite/Player/head.png" id="2_btv44"]
+[ext_resource type="Texture2D" uid="uid://c7nxpfuy8t8ui" path="res://Asset/Sprite/Player/left_foot.png" id="3_ui4ev"]
+[ext_resource type="Texture2D" uid="uid://cf13vv2gb8lgp" path="res://Asset/Sprite/Player/right_foot.png" id="4_jsqvl"]
+[ext_resource type="Texture2D" uid="uid://c1fgvobjry6fe" path="res://Asset/Sprite/Player/backpack.png" id="5_wor0y"]
+[ext_resource type="Texture2D" uid="uid://c7ukixgfbqacp" path="res://Asset/Sprite/Player/light.png" id="6_lkyc4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2apt3"]
+size = Vector2(10, 11.5)
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_b0x8q")
+
+[node name="SpriteGroup" type="Node2D" parent="."]
+
+[node name="Body" type="Sprite2D" parent="SpriteGroup"]
+texture = ExtResource("1_diq72")
+
+[node name="Head" type="Sprite2D" parent="SpriteGroup"]
+texture = ExtResource("2_btv44")
+
+[node name="Left" type="Sprite2D" parent="SpriteGroup"]
+texture = ExtResource("3_ui4ev")
+
+[node name="Right" type="Sprite2D" parent="SpriteGroup"]
+texture = ExtResource("4_jsqvl")
+
+[node name="Backpack" type="Sprite2D" parent="SpriteGroup"]
+texture = ExtResource("5_wor0y")
+
+[node name="Health" type="Sprite2D" parent="SpriteGroup"]
+texture = ExtResource("6_lkyc4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.25)
+shape = SubResource("RectangleShape2D_2apt3")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(4, 4)
+limit_left = 0
+limit_top = 0
+limit_right = 1040
+limit_smoothed = true
+position_smoothing_enabled = true

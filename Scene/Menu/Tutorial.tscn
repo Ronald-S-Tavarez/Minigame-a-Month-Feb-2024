@@ -1,0 +1,162 @@
+[gd_scene load_steps=7 format=3 uid="uid://206yvygc66mp"]
+
+[ext_resource type="Script" path="res://Script/Menu/Tutorial.gd" id="1_gjggs"]
+[ext_resource type="Theme" uid="uid://4qy2rrawo48v" path="res://Asset/Theme/Menu.tres" id="2_y1v7n"]
+[ext_resource type="FontFile" uid="uid://dk3e30s6gagpk" path="res://Asset/Font/Title.ttf" id="3_t8vxg"]
+[ext_resource type="Script" path="res://Script/Node/TitleLabel.gd" id="4_8yiqw"]
+[ext_resource type="FontFile" uid="uid://bl322kk24opqx" path="res://Asset/Font/Main.otf" id="5_cv35c"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_43kf5"]
+bg_color = Color(0.113725, 0.168627, 0.32549, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="Tutorial" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gjggs")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.113725, 0.168627, 0.32549, 1)
+
+[node name="Margin" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Center" type="CenterContainer" parent="Margin"]
+layout_mode = 2
+
+[node name="Actions" type="VBoxContainer" parent="Margin/Center"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Title" type="Label" parent="Margin/Center/Actions"]
+layout_mode = 2
+theme = ExtResource("2_y1v7n")
+theme_override_colors/font_color = Color(1, 0.945098, 0.909804, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/outline_size = 4
+theme_override_constants/shadow_outline_size = 4
+theme_override_fonts/font = ExtResource("3_t8vxg")
+text = "Tutorial"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("4_8yiqw")
+
+[node name="Spacer" type="Control" parent="Margin/Center/Actions"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="Margin/Center/Actions"]
+custom_minimum_size = Vector2(600, 500)
+layout_mode = 2
+theme = ExtResource("2_y1v7n")
+
+[node name="Margin" type="MarginContainer" parent="Margin/Center/Actions/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Panel" type="Panel" parent="Margin/Center/Actions/Panel/Margin"]
+layout_mode = 2
+theme = ExtResource("2_y1v7n")
+theme_override_styles/panel = SubResource("StyleBoxFlat_43kf5")
+
+[node name="Margin" type="MarginContainer" parent="Margin/Center/Actions/Panel/Margin/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Margin/Center/Actions/Panel/Margin/Panel/Margin"]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Margin/Center/Actions/Panel/Margin/Panel/Margin/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_fonts/normal_font = ExtResource("5_cv35c")
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "[center]Welcome to Lunar Harvest![/center]
+
+Let's get you familiar with the controls and basic gameplay mechanics to start mining and exploring.
+
+
+[center]Controls[/center]
+
+W: Climb Up
+A: Move Left
+S: Climb Down
+D: Move Right
+Space : Jump
+
+Mine: Left-Click
+Scan: Right-Click
+
+
+[center]Gameplay Overview[/center]
+
+[center]Objective[/center]
+Explore the level, mine resources, avoid obstacles and enemies to make it to the extraction zone.
+
+[center]Mining[/center]
+Approach an ore and left-click to mine. Each ore requires a certain amount of hits to break. Every ore has a value and weight.
+
+[center]Enemies[/center]
+Avoid or jump over enemies. Contact decreases health. Get hit 3 times in a level and your suit will depressurize!
+
+
+[center]Tips[/center]
+
+[center]Conserve Weight[/center]
+Be selective about what you mine, every ore has a weight and there are penalities for being over encumbered.
+
+[center]Explore carefully[/center]
+Hidden areas may have stronger enemies or valuable resources.
+
+[center]Plan your jumps[/center]
+Some areas require precise jumping. Practice makes perfect!
+
+Embark on your journey with these basics, and discover the secrets that await. Happy mining!"
+fit_content = true
+
+[node name="Return" type="Button" parent="Margin/Center/Actions"]
+layout_mode = 2
+theme = ExtResource("2_y1v7n")
+text = "Return"

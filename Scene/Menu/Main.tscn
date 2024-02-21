@@ -1,0 +1,92 @@
+[gd_scene load_steps=5 format=3 uid="uid://cshqtbot48vkv"]
+
+[ext_resource type="Script" path="res://Script/Menu/Main.gd" id="1_7gtd3"]
+[ext_resource type="Theme" uid="uid://4qy2rrawo48v" path="res://Asset/Theme/Menu.tres" id="1_q7kkx"]
+[ext_resource type="FontFile" uid="uid://dk3e30s6gagpk" path="res://Asset/Font/Title.ttf" id="2_fy0mh"]
+[ext_resource type="Script" path="res://Script/Node/TitleLabel.gd" id="2_ulbxt"]
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7gtd3")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.113725, 0.168627, 0.32549, 1)
+
+[node name="Margin" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Center" type="CenterContainer" parent="Margin"]
+layout_mode = 2
+
+[node name="Actions" type="VBoxContainer" parent="Margin/Center"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Title" type="Label" parent="Margin/Center/Actions"]
+layout_mode = 2
+theme = ExtResource("1_q7kkx")
+theme_override_colors/font_color = Color(1, 0.945098, 0.909804, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/outline_size = 4
+theme_override_constants/shadow_outline_size = 4
+theme_override_fonts/font = ExtResource("2_fy0mh")
+text = "Lunar Harvest"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("2_ulbxt")
+
+[node name="Spacer" type="Control" parent="Margin/Center/Actions"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="Play" type="Button" parent="Margin/Center/Actions"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../Credits")
+focus_neighbor_bottom = NodePath("../Tutorial")
+theme = ExtResource("1_q7kkx")
+text = "Play"
+
+[node name="Tutorial" type="Button" parent="Margin/Center/Actions"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../Play")
+focus_neighbor_bottom = NodePath("../Settings")
+theme = ExtResource("1_q7kkx")
+text = "Tutorial
+"
+
+[node name="Settings" type="Button" parent="Margin/Center/Actions"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../Tutorial")
+focus_neighbor_bottom = NodePath("../Credits")
+theme = ExtResource("1_q7kkx")
+text = "Settings
+"
+
+[node name="Credits" type="Button" parent="Margin/Center/Actions"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../Settings")
+focus_neighbor_bottom = NodePath("../Play")
+theme = ExtResource("1_q7kkx")
+text = "Credits"

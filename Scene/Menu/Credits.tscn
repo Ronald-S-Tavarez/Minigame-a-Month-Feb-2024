@@ -1,0 +1,277 @@
+[gd_scene load_steps=8 format=3 uid="uid://bw6g42anx5q50"]
+
+[ext_resource type="Script" path="res://Script/Menu/Credits.gd" id="1_83njd"]
+[ext_resource type="Theme" uid="uid://4qy2rrawo48v" path="res://Asset/Theme/Menu.tres" id="2_ui53n"]
+[ext_resource type="FontFile" uid="uid://dk3e30s6gagpk" path="res://Asset/Font/Title.ttf" id="3_2d5cs"]
+[ext_resource type="Script" path="res://Script/Node/TitleLabel.gd" id="4_23605"]
+[ext_resource type="Texture2D" uid="uid://d115pui6d76d1" path="res://Asset/icon.svg" id="5_kp1oc"]
+[ext_resource type="FontFile" uid="uid://bl322kk24opqx" path="res://Asset/Font/Main.otf" id="6_sispj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kaq2s"]
+bg_color = Color(0.113725, 0.168627, 0.32549, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_83njd")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.113725, 0.168627, 0.32549, 1)
+
+[node name="Margin" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Center" type="CenterContainer" parent="Margin"]
+layout_mode = 2
+
+[node name="Actions" type="VBoxContainer" parent="Margin/Center"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Title" type="Label" parent="Margin/Center/Actions"]
+layout_mode = 2
+theme = ExtResource("2_ui53n")
+theme_override_colors/font_color = Color(1, 0.945098, 0.909804, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/outline_size = 4
+theme_override_constants/shadow_outline_size = 4
+theme_override_fonts/font = ExtResource("3_2d5cs")
+text = "Credits"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("4_23605")
+
+[node name="Spacer" type="Control" parent="Margin/Center/Actions"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="Thumbnail" type="Panel" parent="Margin/Center/Actions"]
+custom_minimum_size = Vector2(400, 100)
+layout_mode = 2
+theme = ExtResource("2_ui53n")
+
+[node name="Margin" type="MarginContainer" parent="Margin/Center/Actions/Thumbnail"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Column" type="HBoxContainer" parent="Margin/Center/Actions/Thumbnail/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Image" type="TextureRect" parent="Margin/Center/Actions/Thumbnail/Margin/Column"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+texture = ExtResource("5_kp1oc")
+expand_mode = 1
+
+[node name="Panel" type="Panel" parent="Margin/Center/Actions/Thumbnail/Margin/Column"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_ui53n")
+theme_override_styles/panel = SubResource("StyleBoxFlat_kaq2s")
+
+[node name="Details" type="VBoxContainer" parent="Margin/Center/Actions/Thumbnail/Margin/Column/Panel"]
+layout_mode = 2
+offset_left = 10.0
+offset_right = 290.0
+offset_bottom = 80.0
+size_flags_horizontal = 3
+
+[node name="Contributor" type="Label" parent="Margin/Center/Actions/Thumbnail/Margin/Column/Panel/Details"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.945098, 0.909804, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("6_sispj")
+theme_override_font_sizes/font_size = 20
+text = "Dev_Ron"
+
+[node name="Role" type="Label" parent="Margin/Center/Actions/Thumbnail/Margin/Column/Panel/Details"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.945098, 0.909804, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("6_sispj")
+theme_override_font_sizes/font_size = 20
+text = "Programmer"
+
+[node name="Social" type="Label" parent="Margin/Center/Actions/Thumbnail/Margin/Column/Panel/Details"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.945098, 0.909804, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("6_sispj")
+theme_override_font_sizes/font_size = 20
+text = "Itch.io"
+
+[node name="Thumbnail2" type="Panel" parent="Margin/Center/Actions"]
+custom_minimum_size = Vector2(400, 100)
+layout_mode = 2
+theme = ExtResource("2_ui53n")
+
+[node name="Margin" type="MarginContainer" parent="Margin/Center/Actions/Thumbnail2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Column" type="HBoxContainer" parent="Margin/Center/Actions/Thumbnail2/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Image" type="TextureRect" parent="Margin/Center/Actions/Thumbnail2/Margin/Column"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+texture = ExtResource("5_kp1oc")
+expand_mode = 1
+
+[node name="Panel" type="Panel" parent="Margin/Center/Actions/Thumbnail2/Margin/Column"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_ui53n")
+theme_override_styles/panel = SubResource("StyleBoxFlat_kaq2s")
+
+[node name="Details" type="VBoxContainer" parent="Margin/Center/Actions/Thumbnail2/Margin/Column/Panel"]
+layout_mode = 2
+offset_left = 10.0
+offset_right = 290.0
+offset_bottom = 80.0
+size_flags_horizontal = 3
+
+[node name="Contributor" type="Label" parent="Margin/Center/Actions/Thumbnail2/Margin/Column/Panel/Details"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.945098, 0.909804, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("6_sispj")
+theme_override_font_sizes/font_size = 20
+text = "Contributor"
+
+[node name="Role" type="Label" parent="Margin/Center/Actions/Thumbnail2/Margin/Column/Panel/Details"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.945098, 0.909804, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("6_sispj")
+theme_override_font_sizes/font_size = 20
+text = "Role"
+
+[node name="Social" type="Label" parent="Margin/Center/Actions/Thumbnail2/Margin/Column/Panel/Details"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.945098, 0.909804, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("6_sispj")
+theme_override_font_sizes/font_size = 20
+text = "Social Link"
+
+[node name="Thumbnail3" type="Panel" parent="Margin/Center/Actions"]
+custom_minimum_size = Vector2(400, 100)
+layout_mode = 2
+theme = ExtResource("2_ui53n")
+
+[node name="Margin" type="MarginContainer" parent="Margin/Center/Actions/Thumbnail3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Column" type="HBoxContainer" parent="Margin/Center/Actions/Thumbnail3/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Image" type="TextureRect" parent="Margin/Center/Actions/Thumbnail3/Margin/Column"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+texture = ExtResource("5_kp1oc")
+expand_mode = 1
+
+[node name="Panel" type="Panel" parent="Margin/Center/Actions/Thumbnail3/Margin/Column"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_ui53n")
+theme_override_styles/panel = SubResource("StyleBoxFlat_kaq2s")
+
+[node name="Details" type="VBoxContainer" parent="Margin/Center/Actions/Thumbnail3/Margin/Column/Panel"]
+layout_mode = 2
+offset_left = 10.0
+offset_right = 290.0
+offset_bottom = 80.0
+size_flags_horizontal = 3
+
+[node name="Contributor" type="Label" parent="Margin/Center/Actions/Thumbnail3/Margin/Column/Panel/Details"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.945098, 0.909804, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("6_sispj")
+theme_override_font_sizes/font_size = 20
+text = "Contributor"
+
+[node name="Role" type="Label" parent="Margin/Center/Actions/Thumbnail3/Margin/Column/Panel/Details"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.945098, 0.909804, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("6_sispj")
+theme_override_font_sizes/font_size = 20
+text = "Role"
+
+[node name="Social" type="Label" parent="Margin/Center/Actions/Thumbnail3/Margin/Column/Panel/Details"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.945098, 0.909804, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("6_sispj")
+theme_override_font_sizes/font_size = 20
+text = "Social Link"
+
+[node name="Return" type="Button" parent="Margin/Center/Actions"]
+layout_mode = 2
+theme = ExtResource("2_ui53n")
+text = "Return"
